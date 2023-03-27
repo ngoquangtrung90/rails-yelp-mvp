@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Restaurants</h1>
+  <%= link_to 'Create new restaurant', restaurants_new_path %>
+  <% @restaurants.each do |restaurant|  %>
+    <div class="card mt-2" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"> <%= link_to restaurant.name, restaurant_path(restaurant) %> </h5>
+        <p class="card-text"> <%= restaurant.address %> </p>
+        <p>Téléphone: <%= restaurant.phone_number %> </p>
+        <%= link_to 'Update', edit_path(restaurant) %> | <%= link_to 'Delete', restaurant_path(restaurant), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      </div>
+    </div>
+  <% end %>
+</div>

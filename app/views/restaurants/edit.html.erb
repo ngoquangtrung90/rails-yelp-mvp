@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Update Restaurant</h1>
+  <div class="m-5">
+    <%= simple_form_for(@restaurant) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :phone_number %>
+      <%= f.input :category, collection: %w[chinese italian japanese french belgian], include_blank: true %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+  <%= link_to 'Back to list restaurants', restaurants_path %>
+</div>

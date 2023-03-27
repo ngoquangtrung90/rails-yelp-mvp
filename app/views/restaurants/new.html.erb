@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>New Restaurant</h1>
+  <div class="mt-3">
+    <%= simple_form_for(@restaurant) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :phone_number %>
+      <%= f.input :category, collection: %w[chinese italian japanese french belgian], include_blank: true %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>

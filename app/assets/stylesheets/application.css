@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+.restaurants {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
